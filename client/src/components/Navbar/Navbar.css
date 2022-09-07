@@ -1,0 +1,35 @@
+.navbar{
+    background: rgba(164, 140, 0, 0.5);
+    z-index: 999;
+    backdrop-filter: blur(5px);
+}
+.navbar-brand button{
+    font-family: var(--font-u);
+    border: none;
+    background: transparent;
+    color: rgb(255, 253, 253);
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: var(--letter-spacing-normal);
+}
+.nav-link{
+    font-family: var(--font-q);
+    letter-spacing: var(--letter-spacing-normal);
+    font-weight: bold;
+    color: white;
+    padding: 0 10px;
+}
+.regi-li-patition{
+    display: none;
+    color: rgb(255, 234, 0);
+}
+
+@media screen and (min-width: 768px ) {
+    .nav-regi-logi{
+        display: flex;
+        align-items: center;
+    }
+    .regi-li-patition{
+        display: block;
+    }
+}

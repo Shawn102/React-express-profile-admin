@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Pacifico&family=Quintessential&family=Ubuntu&display=swap");
+
+*{
+    margin: 0%;
+    box-sizing: border-box;
+}
+:root{
+    --font-m: 'Montserrat', sans-serif;
+    --font-p: 'Pacifico', cursive;
+    --font-q: 'Quintessential', cursive;
+    --font-u: 'Ubuntu', sans-serif;
+    --letter-spacing-normal: 0.1rem;
+    --letter-spacing-mid: 0.25rem;
+}
