@@ -27,8 +27,8 @@
   box-shadow: -2px -2px 10px rgb(68, 200, 7), 2px 2px 10px rgb(61, 127, 0);
 }
 
-.login-tag h1,
-p {
+.login-tag .regi-h1,
+.register-p {
   color: white;
   text-align: center;
   font-family: var(--font-q);

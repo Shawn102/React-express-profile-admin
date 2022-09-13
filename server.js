@@ -8,7 +8,9 @@ const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const passport = require("passport");
 const passportLocal = require("passport-local");
+const multer = require("multer");
 const User = require("./models/Usermodel");
+const StorageRouter = require("./Storage")
 
 dotenv.config();
 
@@ -27,17 +29,19 @@ mongoose.connect("mongodb://localhost:27017/reactTodoAuthDB", (err) => {
 
 // using the required packages to my "express app"
 app.use(express.json());
+// app.use(express.static("/uploads"));
 app.use(
   cors({
     origin: "http://localhost:3000",
     credentials: true,
   })
 );
+app.use(cookieParser());
 app.use(
   session({
     secret: "Shawn",
-    resave: true,
-    saveUninitialized: true,
+    resave: false,
+    saveUninitialized: false,
     // cookie: {
     //   sameSite: "none",
     //   secure: true,
@@ -46,7 +50,6 @@ app.use(
   })
 );
 
-app.use(cookieParser());
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -75,13 +78,17 @@ passport.serializeUser((user, cb) => {
 passport.deserializeUser((id, cb) => {
   User.findOne({ _id: id }, (err, user) => {
     const userInformation = {
-      username: user.username,
-      isAdmin: user.isAdmin,
       id: user._id,
+      username: user.username,
+      profilePic: user.profileimg,
+      coverPic: user.coverimg,
+      isAdmin: user.isAdmin,
     };
     cb(err, userInformation);
   });
 });
+
+
 
 // Register route
 app.post("/register", (req, res) => {
@@ -165,7 +172,7 @@ app.post("/login", (req, res) => {
   }
 });
 
-app.get("/logout" , (req, res) => {
+app.get("/logout", (req, res) => {
   try {
     req.logOut(req.user, (err) => {
       if (err) {
@@ -178,7 +185,7 @@ app.get("/logout" , (req, res) => {
   } catch (e) {
     console.log(e);
   }
-})
+});
 
 // creating a home route for my express app
 app.get("/", (req, res) => {
@@ -201,9 +208,15 @@ app.get("/", (req, res) => {
 //     res.send("Sorry your are not logged in!");
 //   }
 // };
+
 app.get("/users", (req, res) => {
   res.send(req.user);
 });
+
+
+// storage router
+app.use('/users', StorageRouter);
+
 
 // creating the port for my app
 const port = process.env.PORT || 4100;

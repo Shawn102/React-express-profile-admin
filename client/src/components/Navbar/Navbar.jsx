@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { MyGlobalPropsProvider } from "../../context";
-import './Navbar.css';
+import "./Navbar.css";
 
 const Navbar = () => {
   const { myAuth } = MyGlobalPropsProvider();
@@ -9,7 +9,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-md">
       <div className="container">
         <Link to="/" className="navbar-brand">
-          <button>بسم الله الرحمن الرحيم </button>
+          <button>Todos</button>
         </Link>
         <button
           className="navbar-toggler bg-light"
@@ -33,7 +33,8 @@ const Navbar = () => {
               <li className="nav-item nav-regi-logi">
                 <Link to="/register" className="nav-link">
                   Register
-                </Link> <b className="regi-li-patition">|</b>
+                </Link>
+                <b className="regi-li-patition">|</b>
                 <Link to="/login" className="nav-link">
                   Login
                 </Link>
@@ -44,6 +45,13 @@ const Navbar = () => {
                 Profile
               </Link>
             </li>
+            {myAuth ? (
+              <li className="nav-item">
+                <Link to="/admin" className="nav-link">
+                  Admin
+                </Link>
+              </li>
+            ) : null}
           </ul>
         </div>
       </div>

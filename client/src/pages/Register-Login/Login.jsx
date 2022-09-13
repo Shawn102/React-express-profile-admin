@@ -41,7 +41,7 @@ const Login = () => {
           if (res.data === "Please check your username and password!") {
             setMsg(res.data);
           } else if (res.data === "Successfully authenticated!") {
-            setLoginMsg(res.data);
+            // setLoginMsg(res.data);
             window.location.href="/profile"
           }
         }
@@ -81,7 +81,7 @@ const Login = () => {
     <Hero heroClass="logibc">
       <div className="login-tag login-extra">
         {registerMsg ? <h1>{registerMsg}</h1> : null}
-        <h1>User Login</h1>
+        <h1 className="regi-h1">User Login</h1>
         <div className="login-form-area">
           <form onSubmit={HandleOnLoginSubmit} className="log-form">
             <input
@@ -132,7 +132,7 @@ const Login = () => {
             </a>
           </div>
         </div>
-        <p>
+        <p className="register-p">
           Don't have account?
           <Link to="/register" className="create-account-a">
             Create new account

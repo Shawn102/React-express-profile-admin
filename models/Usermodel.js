@@ -1,5 +1,11 @@
 const mongoose = require("mongoose");
 
+const listSchema = new mongoose.Schema({
+  title: String,
+  content: String,
+});
+const List = mongoose.model("List", listSchema);
+
 const userSchema = new mongoose.Schema(
   {
     username: {
@@ -19,12 +25,15 @@ const userSchema = new mongoose.Schema(
       default: false,
     },
     adminPassword: String,
+    items: [listSchema],
+    profileimg: String,
+    coverimg: String,
+
   },
   { timestamps: true }
 );
 
 // Creating model for my schema
 const User = mongoose.model("User", userSchema);
-
 
 module.exports = User;

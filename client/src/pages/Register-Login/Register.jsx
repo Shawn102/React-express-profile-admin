@@ -102,7 +102,7 @@ const Register = () => {
     <Hero heroClass="regibc">
       <div className="login-tag">
         {backendMsg ? <h1>{backendMsg}</h1> : null}
-        <h1>Register</h1>
+        <h1 className="regi-h1">Register</h1>
         <div className="login-form-area">
           <form onSubmit={handleRegiOnSubmit} className="log-form">
             <label htmlFor="username" className="label1">
@@ -195,7 +195,7 @@ const Register = () => {
             </a>
           </div> */}
         </div>
-        <p>
+        <p className="register-p">
           Already have an account?
           <Link to="/login" className="create-account-a">
             Login Instead

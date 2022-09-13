@@ -1,0 +1,307 @@
+/* profile */
+.profile-background {
+  background: url(../../assets/prof-back.jpg) center/cover no-repeat;
+  min-height: 100vh;
+}
+.img-container {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background-color: rgb(229, 229, 229);
+  margin-bottom: 70px;
+}
+.sub-img-profile {
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 5px solid rgb(255, 255, 255);
+}
+.pro-back {
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  width: 100%;
+  max-width: 150px;
+  height: 150px;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 75px;
+}
+.img-profile {
+  height: 150px;
+  cursor: pointer;
+  object-fit: cover;
+  border-radius: 75px;
+  border: 5px solid rgb(228, 228, 228);
+  box-shadow: 0 0 10px 1px rgb(0, 0, 0);
+}
+.profile-upload-button {
+  position: absolute;
+  bottom: 5px;
+  right: -10px;
+  border: none;
+  background: rgba(199, 198, 198, 0.7);
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+}
+.sub-upload-btn {
+  position: absolute;
+  bottom: 100px;
+  right: 50px;
+  border: none;
+  background: rgba(199, 198, 198, 0.7);
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.profile-upload-button:hover,
+.sub-upload-btn:hover {
+  background: greenyellow;
+  color: red;
+}
+/* Pop-up style */
+.pop-up-section {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.3);
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  transition: 0.2s all ease-in;
+}
+.show-popup-section {
+  opacity: 1;
+  z-index: 999;
+}
+.list-group {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform: translateY(100%);
+  font-weight: 900;
+  font-family: var(--font-u);
+  transition: 0.3s all ease;
+}
+.popup-links {
+  transform: translateY(0);
+}
+.button-pop-up {
+  background: rgba(203, 201, 201, 0.5);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  color: rgb(0, 0, 0);
+  margin-right: 10px;
+  font-weight: 900;
+}
+.list-group-item:first-child {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.list-group-item:last-child {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.list-group-item {
+  border: none !important;
+  cursor: pointer;
+  transition: 0.3s all ease;
+}
+.list-group-item:hover {
+  background: gray;
+}
+.list-group-item:hover .button-pop-up {
+  background: rgb(255, 255, 255);
+}
+/* section text */
+.section-text {
+  text-align: center;
+  padding: 0 10px;
+}
+.section-text-h1 {
+  font-family: var(--font-u);
+  letter-spacing: -0.1rem;
+}
+/* section text edit button continer */
+.edit-btn-containers {
+  font-family: var(--font-q);
+}
+.mg-btn-edit {
+  margin-right: 2px;
+  font-size: 16px;
+}
+/* profile picture upload */
+.upload-main-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background: url(../../assets/prof-back.jpg) center/cover no-repeat;
+  transform: translateX(100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  transition: 0.25s all ease-in;
+}
+.showUploadPage {
+  transform: translateX(0);
+}
+.fileSizeUploadMsg {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 30px;
+  left: 0;
+  z-index: 9999;
+}
+.fileSizeUploadMsg > h1 {
+  width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
+  background: rgba(255, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  color: white;
+  padding: 30px 10px;
+  letter-spacing: 0.1rem;
+  font-family: var(--font-q);
+}
+.mb-limit {
+  color: rgb(255, 251, 0);
+  text-shadow: 3px 3px 5px rgb(10, 10, 10);
+}
+
+.profileUploadNav {
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  top: 0;
+  left: 0;
+  font-family: var(--font-u);
+  font-weight: bold;
+}
+.back-profile {
+  cursor: pointer;
+}
+.back-profile svg {
+  font-size: 30px;
+}
+.img-form-container {
+  width: 100%;
+  max-width: 320px;
+  background: rgba(1, 1, 1, 0.5);
+  text-align: center;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+}
+input[type="file"] {
+  display: none;
+}
+.upload-label {
+  color: rgb(68, 255, 0);
+  font-family: var(--font-u);
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+}
+.upload-label svg {
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  font-size: 50px;
+  margin: 20px;
+  transition: 0.2s all ease;
+}
+.upload-label svg:hover {
+  color: rgb(170, 255, 170);
+}
+.no-img {
+  color: white;
+  font-family: var(--font-q);
+  padding: 5px;
+}
+.uploading-prof-check {
+  width: 100%;
+  max-width: 180px;
+  height: 200px;
+  object-fit: cover;
+  background: rgb(255, 255, 255);
+}
+
+.view-pic {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.show-popup-view-picture {
+  opacity: 1;
+  z-index: 999;
+}
+
+.view-pic-relative {
+  position: relative;
+}
+.view-picture {
+  width: 100%;
+  max-width: 400px;
+  height: 400px;
+  background: white;
+  object-fit: fill;
+}
+
+.view-cross-btn {
+  position: absolute;
+  color: red;
+  top: 20px;
+  left: 20px;
+  border: none;
+  background: transparent;
+  font-size: 25px;
+  transition: 0.3s all ease;
+  animation: crossBtn 2s ease 1s infinite;
+}
+.view-cross-btn:hover {
+  color: green;
+}
+
+@keyframes crossBtn {
+  50% {
+    transform: scale(1) rotate(-20deg);
+    color: gray;
+  }
+  70% {
+    transform: scale(1.4);
+    color: goldenrod;
+  }
+  90% {
+    transform: scale(1.2) rotate(20deg);
+  }
+}
+@media screen and (min-width: 768px) {
+  /* section text edit button continer */
+  .edit-text-btn-bi {
+    font-size: 20px;
+    margin: 5px;
+  }
+  .mg-btn-edit {
+    margin-right: 10px;
+    font-size: 25px;
+  }
+}

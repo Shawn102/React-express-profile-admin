@@ -1,14 +1,64 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Pacifico&family=Quintessential&family=Ubuntu&display=swap");
 
-*{
-    margin: 0%;
-    box-sizing: border-box;
+* {
+  margin: 0%;
+  box-sizing: border-box;
 }
-:root{
-    --font-m: 'Montserrat', sans-serif;
-    --font-p: 'Pacifico', cursive;
-    --font-q: 'Quintessential', cursive;
-    --font-u: 'Ubuntu', sans-serif;
-    --letter-spacing-normal: 0.1rem;
-    --letter-spacing-mid: 0.25rem;
+:root {
+  --font-m: "Montserrat", sans-serif;
+  --font-p: "Pacifico", cursive;
+  --font-q: "Quintessential", cursive;
+  --font-u: "Ubuntu", sans-serif;
+  --letter-spacing-normal: 0.1rem;
+  --letter-spacing-mid: 0.25rem;
+}
+.error-page-custom-class {
+  min-height: 100vh;
+  background: url(./assets/errorBack.jpg) center/cover no-repeat;
+}
+.error-page-custom-class > div {
+  background: rgba(189, 189, 189, 0.3);
+  backdrop-filter: blur(5px);
+  padding: 20px 0;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 5px;
+}
+.error-h1 {
+  color: white;
+  font-family: var(--font-u);
+  letter-spacing: 0.05rem;
+}
+/* home */
+.home-bc {
+  background: url(./assets/homebc.jpg)
+    center/cover no-repeat;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+.home-bc h1 {
+  font-family: var(--font-u);
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  font-size: 40px;
+  color: rgb(255, 255, 255);
+}
+.home-p {
+  font-family: var(--font-q);
+  width: 100%;
+  max-width: 600px;
+  letter-spacing: 0.1rem;
+  color: rgb(253, 253, 253);
+  text-shadow: 5px 3px 3px rgb(0, 0, 0);
+}
+
+@media screen and (max-width: 767px) {
+  .home-bc h1 {
+    font-size: 30px;
+  }
 }

@@ -4,12 +4,10 @@
     backdrop-filter: blur(5px);
 }
 .navbar-brand button{
-    font-family: var(--font-u);
+    font-family: var(--font-p);
     border: none;
     background: transparent;
-    color: rgb(255, 253, 253);
-    font-size: 15px;
-    font-weight: bold;
+    color: rgb(0, 157, 138);
     letter-spacing: var(--letter-spacing-normal);
 }
 .nav-link{
